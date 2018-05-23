@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8">
+    <title>Create a new user</title>
+</head>
+<nav role="navigation">
+    <ul>
+        <li><a href="/">Home</a></li>
+    </ul>
+</nav>
+<body>
+    <h1>Create a new user</h1>
+    <form name="form" action="" method="post">
+        <div>
+            <label for="email">Email address</label>
+            <input type="email" name="email" id="email" value="${form.email}" required autofocus/>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required/>
+        </div>
+        <div>
+            <label for="passwordRepeated">Repeat</label>
+            <input type="password" name="passwordRepeated" id="passwordRepeated" required/>
+        </div>
+        <div>
+            <label for="role">Role</label>
+            <select name="role" id="role" required>
+                <option>USER</option>
+                <option>ADMIN</option>
+            </select>
+        </div>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
