@@ -9,11 +9,13 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import com.upms.domain.CurrentUser;
 import com.upms.domain.User;
 import com.upms.service.UserService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 	private final static Logger	LOGGER	= LoggerFactory.getLogger(UserDetailsServiceImpl.class);
 	@Autowired
-	UserService					userService;
+	private UserService					userService;
 
 
 

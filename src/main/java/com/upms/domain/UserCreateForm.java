@@ -9,7 +9,7 @@ public class UserCreateForm {
 	@NotEmpty
 	private String	password;
 	@NotEmpty
-	private String	passwordRePeated;
+	private String	passwordRepeated;
 	@NotNull
 	private Role	role	= Role.USER;
 
@@ -39,14 +39,14 @@ public class UserCreateForm {
 
 
 
-	public String getPasswordRePeated() {
-		return passwordRePeated;
+	public String getPasswordRepeated() {
+		return passwordRepeated;
 	}
 
 
 
-	public void setPasswordRePeated(String passwordRePeated) {
-		this.passwordRePeated = passwordRePeated;
+	public void setPasswordRepeated(String passwordRepeated) {
+		this.passwordRepeated = passwordRepeated;
 	}
 
 
@@ -65,7 +65,7 @@ public class UserCreateForm {
 
 	@Override
 	public String toString() {
-		return "UserCreateForm{" + "email='" + email + '\'' + ", password='" + password + '\'' + ", passwordRePeated='"
-				+ passwordRePeated + '\'' + ", role=" + role + '}';
+		return "UserCreateForm{" + "email='" + email + '\'' + ", password='" + password + '\'' + ", passwordRepeated='"
+				+ passwordRepeated + '\'' + ", role=" + role + '}';
 	}
 }

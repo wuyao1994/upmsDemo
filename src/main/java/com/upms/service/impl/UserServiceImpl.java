@@ -18,7 +18,7 @@ import com.upms.service.UserService;
 public class UserServiceImpl implements UserService {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
 	@Override
 	public Optional<User> getUserById(long id) {
@@ -50,6 +50,6 @@ public class UserServiceImpl implements UserService {
 	    user.setEmail(form.getEmail());
 	    user.setPassword(new BCryptPasswordEncoder().encode(form.getPassword()));
 	    user.setRole(form.getRole());
-		return user;
+		return userRepository.save(user);
 	}
 }

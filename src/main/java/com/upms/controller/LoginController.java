@@ -13,13 +13,19 @@ import java.util.Optional;
 
 @Controller
 public class LoginController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
-    @RequestMapping(value = "/")
-    public String homePage(Model model) {
-        return "home";
-    }
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginPage(Model model) {
-        return "login";
-    }
+	private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
+
+
+
+	@RequestMapping(value = "/")
+	public String homePage(Model model) {
+		return "home";
+	}
+
+
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String loginPage(Model model) {
+		return "login";
+	}
 }

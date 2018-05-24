@@ -8,6 +8,8 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import com.upms.service.UserService;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 
 @Component
 public class UserCreateFormValidator implements Validator {
@@ -29,7 +31,7 @@ public class UserCreateFormValidator implements Validator {
         validateEmail(errors, form);
     }
     private void validatePassword(Errors errors, UserCreateForm form) {
-        if (!form.getPassword().equals(form.getPasswordRePeated())) {
+        if (!form.getPassword().equals(form.getPasswordRepeated())) {
             errors.reject("password.mo_match", "password do not match");
         }
     }

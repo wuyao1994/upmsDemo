@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8">
+    <title>update user</title>
+</head>
+<nav role="navigation">
+    <ul>
+        <li><a href="/">Home</a></li>
+    </ul>
+</nav>
+<body>
+    <h1>update book</h1>
+    <form name="form" action="" th:action="@{/book/update}" th:method="post">
+        <div>
+            <label for="id">book id</label>
+            <input type="id" name="id" id="id" th:value="${book.id}"/>
+        </div>
+        <div>
+            <label for="name">book name</label>
+            <input type="name" name="name" id="name" th:value="${book.name}"/>
+        </div>
+        <div>
+            <label for="num">book num</label>
+            <input type="num" name="num" id="num" th:value="${book.num}"/>
+        </div>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
