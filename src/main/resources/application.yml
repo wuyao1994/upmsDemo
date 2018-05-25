@@ -12,5 +12,7 @@ spring:
     mode: HTML5
     encoding: UTF-8
     cache: false
+  mvc:
+    static-path-pattern: /static/**
 server:
   port: 9000

@@ -53,7 +53,7 @@ public class UserController {
             bindingResult.reject("email.exists", "Email already exists");
             return "userCreate";
         }
-        return "users";
+        return "redirect:/users";
     }
 
     @PreAuthorize("hasAuthority('ADMIN')")
