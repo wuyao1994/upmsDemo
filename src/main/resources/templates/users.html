@@ -17,10 +17,19 @@
         </li>
     </ul>
 </nav>
-users:
-<ul th:each="user : ${users}">
-    <li th:each="entry : ${user}" th:text="${user.email}" ></li>
-    <li th:each="entry : ${user}" th:text="${user.role}"></li>
-</ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th>email</th>
+            <th>role</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="user : ${users}">
+            <td th:each="entry : ${user}" th:text="${user.email}"></td>
+            <td th:each="entry : ${user}" th:text="${user.role}"></td>
+        </tr>
+    </tbody>
+</table>
 </body>
 </html>

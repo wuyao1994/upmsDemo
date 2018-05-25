@@ -18,15 +18,27 @@
     </ul>
 </nav>
 <nav role="navigation">
-    <a href="/book/add">add book</a>
+    <a href="/book/add">Add Book</a>
 </nav>
-books:
-<ul th:each="book : ${books}">
-    <li th:each="entry : ${book}" th:text="${book.id}" ></li>
-    <li th:each="entry : ${book}" th:text="${book.name}"></li>
-    <li th:each="entry : ${book}" th:text="${book.num}"></li>
-    <li><a th:href="'/book/update/'+${book.id}">update</a></li>
-    <li><a th:href="'/book/delete/'+${book.id}">delete</a></li>
-</ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Num</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${books}">
+        <td th:each="entry : ${book}" th:text="${book.id}" ></td>
+        <td th:each="entry : ${book}" th:text="${book.name}"></td>
+        <td th:each="entry : ${book}" th:text="${book.num}"></td>
+        <td><a th:href="'/book/update/'+${book.id}">update</a></td>
+        <td><a th:href="'/book/delete/'+${book.id}">delete</a></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

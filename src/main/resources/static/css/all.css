@@ -1,0 +1,8 @@
+.from-box {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+}
+.from-box button{
+    margin: 10px 0;
+}
