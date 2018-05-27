@@ -1,6 +1,6 @@
-package com.upms.repository;
+package com.upms.repository.book;
 
-import com.upms.domain.Book;
+import com.upms.domain.book.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BookRepository extends JpaRepository<Book, Long> {

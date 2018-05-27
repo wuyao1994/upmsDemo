@@ -1,4 +1,6 @@
-package com.upms.domain;
+package com.upms.domain.user;
+
+import com.upms.domain.Role;
 
 import javax.persistence.*;
 
@@ -18,7 +20,7 @@ public class User {
 
 	@Column(name = "role", nullable = false)
 	@Enumerated(EnumType.STRING)
-	private Role	role;
+	private Role role;
 
 
 

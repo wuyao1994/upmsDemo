@@ -22,12 +22,14 @@
         <tr>
             <th>email</th>
             <th>role</th>
+            <th>action</th>
         </tr>
     </thead>
     <tbody>
         <tr th:each="user : ${users}">
             <td th:each="entry : ${user}" th:text="${user.email}"></td>
             <td th:each="entry : ${user}" th:text="${user.role}"></td>
+            <td><a th:href="'/user/delete/'+${user.id}">delete</a></td>
         </tr>
     </tbody>
 </table>

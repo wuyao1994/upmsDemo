@@ -1,9 +1,15 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/upmsDemo
-    username: root
-    password: password
+    primary:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbcUrl: jdbc:mysql://localhost:3306/upmsDemo_primary
+      username: root
+      password: password
+    secondary:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbcUrl: jdbc:mysql://localhost:3306/upmsDemo_secondary
+      username: root
+      password: password
   jpa:
     hibernate:
       ddl-auto: update
@@ -14,9 +20,5 @@ spring:
     cache: false
   mvc:
     static-path-pattern: /static/**
-#  redis:
-#    host: localhost
-#    password: admin123
-#    port: 6379
 server:
   port: 9000

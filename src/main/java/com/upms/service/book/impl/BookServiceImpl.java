@@ -1,10 +1,10 @@
-package com.upms.service.impl;
+package com.upms.service.book.impl;
 
 import java.util.List;
 
-import com.upms.domain.Book;
-import com.upms.repository.BookRepository;
-import com.upms.service.BookService;
+import com.upms.domain.book.Book;
+import com.upms.repository.book.BookRepository;
+import com.upms.service.book.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

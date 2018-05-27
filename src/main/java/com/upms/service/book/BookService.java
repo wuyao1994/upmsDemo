@@ -1,6 +1,6 @@
-package com.upms.service;
+package com.upms.service.book;
 
-import com.upms.domain.Book;
+import com.upms.domain.book.Book;
 
 import java.util.List;
 

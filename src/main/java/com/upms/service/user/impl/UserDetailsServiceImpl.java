@@ -1,4 +1,4 @@
-package com.upms.service.impl;
+package com.upms.service.user.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,8 +7,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import com.upms.domain.CurrentUser;
-import com.upms.domain.User;
-import com.upms.service.UserService;
+import com.upms.domain.user.User;
+import com.upms.service.user.UserService;
 import org.springframework.stereotype.Service;
 
 @Service

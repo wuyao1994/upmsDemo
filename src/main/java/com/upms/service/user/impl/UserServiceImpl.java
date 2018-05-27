@@ -1,4 +1,4 @@
-package com.upms.service.impl;
+package com.upms.service.user.impl;
 
 import java.util.Collection;
 import java.util.Optional;
@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.upms.domain.User;
+import com.upms.domain.user.User;
 import com.upms.domain.UserCreateForm;
-import com.upms.repository.UserRepository;
-import com.upms.service.UserService;
+import com.upms.repository.user.UserRepository;
+import com.upms.service.user.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -51,5 +51,11 @@ public class UserServiceImpl implements UserService {
 	    user.setPassword(new BCryptPasswordEncoder().encode(form.getPassword()));
 	    user.setRole(form.getRole());
 		return userRepository.save(user);
+	}
+
+	@Override
+	public Boolean deleteUser(Long id) {
+		userRepository.deleteById(id);
+		return true;
 	}
 }

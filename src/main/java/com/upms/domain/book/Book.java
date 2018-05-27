@@ -1,4 +1,4 @@
-package com.upms.domain;
+package com.upms.domain.book;
 
 import java.io.Serializable;
 

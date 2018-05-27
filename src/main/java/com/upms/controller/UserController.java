@@ -11,14 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import com.upms.domain.UserCreateForm;
 import com.upms.validator.UserCreateFormValidator;
-import com.upms.service.UserService;
+import com.upms.service.user.UserService;
 
 @Controller
 public class UserController {
@@ -74,5 +71,13 @@ public class UserController {
 		LOGGER.debug("get all user");
 		model.addAttribute("users", userService.getAllUsers());
 		return "users";
+	}
+
+	@PreAuthorize("hasAuthority('ADMIN')")
+	@RequestMapping(value = "/user/delete/{id}", method = RequestMethod.GET)
+	public String deleteUser(@PathVariable("id") Long id, Model model) {
+		LOGGER.debug("delete user id ${0}", id);
+		userService.deleteUser(id);
+		return "redirect:/users";
 	}
 }

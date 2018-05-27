@@ -1,9 +1,9 @@
-package com.upms.service;
+package com.upms.service.user;
 
 import java.util.Collection;
 import java.util.Optional;
 
-import com.upms.domain.User;
+import com.upms.domain.user.User;
 import com.upms.domain.UserCreateForm;
 
 public interface UserService {
@@ -20,4 +20,6 @@ public interface UserService {
 
 
 	User create(UserCreateForm form);
+
+	Boolean deleteUser(Long id);
 }

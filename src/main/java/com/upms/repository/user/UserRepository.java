@@ -1,6 +1,6 @@
-package com.upms.repository;
+package com.upms.repository.user;
 
-import com.upms.domain.User;
+import com.upms.domain.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

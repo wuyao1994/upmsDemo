@@ -10,8 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import com.upms.domain.Book;
-import com.upms.service.BookService;
+import com.upms.domain.book.Book;
+import com.upms.service.book.BookService;
 
 @Controller
 @RequestMapping(value = "/book")
