@@ -42,6 +42,7 @@ public class UserController {
 	@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value = "/user/create", method = RequestMethod.GET)
 	public String getUserCreateFrom(Model model) {
+		LOGGER.debug("redirect user create page");
 		return "userCreate";
 	}
 
@@ -52,8 +53,9 @@ public class UserController {
 	public String handleUserCreateFrom(@Valid @ModelAttribute("form") UserCreateForm form, BindingResult bindingResult,
 			Model model) {
 		if (bindingResult.hasErrors()) {
+			LOGGER.error("user validation falid");
 			model.addAttribute("Errors", bindingResult.getAllErrors());
-            return "userCreate";
+			return "userCreate";
 		}
 		try {
 			userService.create(form);
@@ -69,6 +71,7 @@ public class UserController {
 	@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	public String getUsers(Model model) {
+		LOGGER.debug("get all user");
 		model.addAttribute("users", userService.getAllUsers());
 		return "users";
 	}

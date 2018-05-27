@@ -25,6 +25,7 @@ public class LoginController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage(Model model, @RequestParam Optional<String> error) {
+		LOGGER.debug("login page");
 		model.addAttribute("error", error);
 		return "login";
 	}
