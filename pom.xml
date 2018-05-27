@@ -83,6 +83,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<outputDirectory>${basedir}/jar</outputDirectory>
+					<mainClass>com.upms.Application</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
