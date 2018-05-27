@@ -10,12 +10,6 @@
     <title>upms</title>
 </head>
 <body class="text-center">
-<div th:if="${param.error}">
-    Invalid username and password.
-</div>
-<div th:if="${param.logout}">
-    You have been logged out.
-</div>
     <form th:action="@{/login}" method="post" class="form-signin">
         <h1 class="h3 mb-3 font-weight-normal">sign in</h1>
         <div>
@@ -26,6 +20,9 @@
             <label for="password">Password</label>
             <input type="password" name="password" id="password" class="form-control" placeholder="Password" required/>
         </div>
+        <div th:if="${error.isPresent()}" style="color: red">
+            Invalid username or password.
+        </div>
         <div class="checkbox mb-3">
             <label for="remember-me">Remember me</label>
             <input type="checkbox" name="remember-me" id="remember-me"/>
@@ -33,4 +30,5 @@
         <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
     </form>
 </body>
+
 </html>

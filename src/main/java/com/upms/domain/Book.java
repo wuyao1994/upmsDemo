@@ -15,9 +15,9 @@ public class Book implements Serializable {
 	@GeneratedValue
 	@NotNull
 	private Long	id;
-	@NotNull
+	@NotNull(message = "name is null")
 	private String	name;
-	@NotNull
+	@NotNull(message = "num is null")
 	private String	num;
 
 

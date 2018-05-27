@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -18,18 +19,18 @@
 </nav>
 <body>
     <h1>update book</h1>
-    <form name="form" action="" th:action="@{/book/update}" th:method="post" class="from-box">
+    <form name="book" action="" th:action="@{/book/update}" th:method="post" class="from-box">
         <div>
             <label for="id">book id</label>
-            <input type="id" name="id" id="id" th:value="${book.id}" class="form-control"/>
+            <input type="id" name="id" id="id" th:value="${book.id}" class="form-control" required/>
         </div>
         <div>
             <label for="name">book name</label>
-            <input type="name" name="name" id="name" th:value="${book.name}" class="form-control"/>
+            <input type="name" name="name" id="name" th:value="${book.name}" class="form-control" required/>
         </div>
         <div>
             <label for="num">book num</label>
-            <input type="num" name="num" id="num" th:value="${book.num}" class="form-control"/>
+            <input type="num" name="num" id="num" th:value="${book.num}" class="form-control" required/>
         </div>
         <button type="submit" class="btn btn-lg btn-primary btn-block">Update</button>
     </form>

@@ -11,19 +11,25 @@
     <title>upms</title>
 </head>
 <body>
-    <form name="form" action="" th:action="@{/user/create}" th:method="post" class="form-signin">
+    <form name="form" action="" th:action="@{/user/create}" th:method="post" class="form-signin" th:object="${UserCreateFrom}">
         <h1 class="h3 mb-3 font-weight-normal">Create a new user</h1>
         <div>
             <label for="email">Email address</label>
-            <input type="email" name="email" id="email" class="form-control"/>
+            <input type="email" name="email" id="email" class="form-control" required/>
+        </div>
         </div>
         <div>
             <label for="password">Password</label>
-            <input type="password" name="password" class="form-control" id="password"/>
+            <input type="password" name="password" class="form-control" id="password" required/>
         </div>
         <div>
             <label for="passwordRepeated">Repeat</label>
-            <input type="password" name="passwordRepeated" class="form-control" id="passwordRepeated"/>
+            <input type="password" name="passwordRepeated" class="form-control" id="passwordRepeated" required/>
+        </div>
+        <div th:if="${Errors}" style="color: red">
+            <ul th:each="error : ${Errors}">
+                <li th:text="${error.defaultMessage}"></li>
+            </ul>
         </div>
         <div>
             <label for="role">Role</label>

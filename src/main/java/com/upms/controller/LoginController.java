@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.Optional;
 
 @Controller
 public class LoginController {
@@ -21,7 +24,8 @@ public class LoginController {
 
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String loginPage(Model model) {
+	public String loginPage(Model model, @RequestParam Optional<String> error) {
+		model.addAttribute("error", error);
 		return "login";
 	}
 }

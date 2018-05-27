@@ -4,11 +4,11 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 public class UserCreateForm {
-	@NotEmpty
+	@NotEmpty(message = "email is empty")
 	private String	email;
-	@NotEmpty
+	@NotEmpty(message = "password is empty")
 	private String	password;
-	@NotEmpty
+	@NotEmpty(message = "password is empty")
 	private String	passwordRepeated;
 	@NotNull
 	private Role	role	= Role.USER;
