@@ -20,5 +20,15 @@ spring:
     cache: false
   mvc:
     static-path-pattern: /static/**
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: 1
+    password: admin123
 server:
   port: 9000

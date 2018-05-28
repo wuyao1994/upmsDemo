@@ -6,6 +6,9 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -15,11 +18,13 @@ import com.upms.repository.user.UserRepository;
 import com.upms.service.user.UserService;
 
 @Service
+@CacheConfig(cacheNames = "users")
 public class UserServiceImpl implements UserService {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
     @Autowired
     private UserRepository userRepository;
 
+    @Cacheable(key = "#p0")
 	@Override
 	public Optional<User> getUserById(long id) {
 	    LOGGER.debug("Getting user by id={}", id);
@@ -28,6 +33,7 @@ public class UserServiceImpl implements UserService {
 
 
 
+    @Cacheable(key = "#p0")
 	@Override
 	public Optional<User> getUserByEmail(String email) {
         LOGGER.debug("Getting user by email={}", email);
@@ -53,6 +59,7 @@ public class UserServiceImpl implements UserService {
 		return userRepository.save(user);
 	}
 
+    @CacheEvict(key = "#p0")
 	@Override
 	public Boolean deleteUser(Long id) {
 		userRepository.deleteById(id);

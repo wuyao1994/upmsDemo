@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactorySecondary", transactionManagerRef = "transactionManagerSecondary", basePackages = {
-		"com.upms.repository.book" }) // 设置Repository所在位置
+		"com.upms.repository.book" })
 public class SecondaryConfig {
 
 	@Autowired
@@ -42,7 +42,7 @@ public class SecondaryConfig {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactorySecondary(EntityManagerFactoryBuilder builder) {
 		return builder.dataSource(secondaryDataSource)
                 .properties(getVendorProperties())
-				.packages("com.upms.domain.book") // 设置实体类所在位置
+				.packages("com.upms.domain.book")
 				.persistenceUnit("primaryPersistenceUnit")
                 .build();
 	}

@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactoryPrimary", transactionManagerRef = "transactionManagerPrimary", basePackages = {
-		"com.upms.repository.user" }) // 设置Repository所在位置
+		"com.upms.repository.user" })
 public class PrimaryConfig {
 
 	@Autowired
@@ -45,7 +45,7 @@ public class PrimaryConfig {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary(EntityManagerFactoryBuilder builder) {
 		return builder.dataSource(primaryDataSource)
                 .properties(getVendorProperties())
-				.packages("com.upms.domain.user") // 设置实体类所在位置
+				.packages("com.upms.domain.user")
 				.persistenceUnit("primaryPersistenceUnit")
                 .build();
 	}
